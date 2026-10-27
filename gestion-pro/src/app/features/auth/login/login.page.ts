@@ -1,9 +1,10 @@
 ﻿import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { AbstractControl, AsyncValidatorFn, FormBuilder, FormGroup, ReactiveFormsModule, ValidationErrors, Validators } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { AuthService } from '../../../core/services/auth.service';
 import { Router } from '@angular/router';
+import { catchError, debounceTime, map, of, switchMap } from 'rxjs';
 
 @Component({
   selector: 'app-login',
