@@ -1,0 +1,26 @@
+﻿<ion-searchbar [(ngModel)]="searchTerm" (ionInput)="onSearch()" placeholder="Buscar..."></ion-searchbar>
+
+<ion-grid>
+  <ion-row class="header-row">
+    <ion-col *ngFor="let col of columns">{{ col.label }}</ion-col>
+    <ion-col>Acciones</ion-col>
+  </ion-row>
+  <ion-row *ngFor="let row of paginated" (click)="selectRow(row)">
+    <ion-col *ngFor="let col of columns">{{ row[col.key] }}</ion-col>
+    <ion-col>
+      <ion-button fill="clear" color="danger" size="small" (click)="deleteRow(row); .stopPropagation()" aria-label="Eliminar fila">Eliminar</ion-button>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+
+<ion-row class="ion-justify-content-between ion-align-items-center">
+  <ion-col size="auto">
+    <ion-button fill="clear" [disabled]="page === 1" (click)="page = page - 1">Anterior</ion-button>
+  </ion-col>
+  <ion-col size="auto">
+    <ion-text>Página {{ page }} / {{ totalPages }}</ion-text>
+  </ion-col>
+  <ion-col size="auto">
+    <ion-button fill="clear" [disabled]="page === totalPages" (click)="page = page + 1">Siguiente</ion-button>
+  </ion-col>
+</ion-row>
