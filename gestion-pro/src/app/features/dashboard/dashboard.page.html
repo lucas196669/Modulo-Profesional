@@ -7,5 +7,59 @@
 <ion-content class="ion-padding">
   <main id="main">
     <h1>Panel de Administración</h1>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12" sizeMd="6" sizeLg="4">
+          <app-stat-widget title="Total" [value]="total | currency:'EUR'" variation="+10%" icon="cash"></app-stat-widget>
+        </ion-col>
+        <ion-col size="12" sizeMd="6" sizeLg="4">
+          <app-stat-widget title="Registros" [value]="records.length" variation="+5%" icon="document-text"></app-stat-widget>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-spinner *ngIf="loading"></ion-spinner>
+    <ion-text color="danger" *ngIf="error">{{ error }}</ion-text>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12" sizeLg="6">
+          <ion-card>
+            <ion-card-header>
+              <ion-card-title>Por categoría (Barras)</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              <canvas baseChart [data]="barChartData" [options]="barChartOptions" type="bar"></canvas>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+        <ion-col size="12" sizeLg="6">
+          <ion-card>
+            <ion-card-header>
+              <ion-card-title>Evolución (Líneas)</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              <canvas baseChart [data]="lineChartData" [options]="lineChartOptions" type="line"></canvas>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="12" sizeLg="6">
+          <ion-card>
+            <ion-card-header>
+              <ion-card-title>Distribución (Donut)</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              <canvas baseChart [data]="doughnutChartData" [options]="doughnutChartOptions" type="doughnut"></canvas>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-button (click)="exportCSV()">Exportar CSV</ion-button>
+    <ion-button (click)="exportPDF()">Exportar PDF</ion-button>
   </main>
 </ion-content>
