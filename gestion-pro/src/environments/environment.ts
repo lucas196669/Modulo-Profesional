@@ -1,13 +1,5 @@
 ﻿export const environment = {
   production: false,
-  apiUrl: 'http://localhost:3000',
-  useFirebase: false,
-  firebase: {
-    apiKey: '',
-    authDomain: '',
-    projectId: '',
-    storageBucket: '',
-    messagingSenderId: '',
-    appId: ''
-  }
+  supabaseUrl: 'https://uscyvqmdekernuioeraq.supabase.co',
+  supabaseKey: 'sb_publishable_surUpW7t3mt-4YdPkaMuhA_X3UE9Ql_'
 };
