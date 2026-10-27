@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { forkJoin } from 'rxjs';
-import { SupabaseDataService } from '../../../core/services/supabase-data.service';
-import { FirestoreDataService } from '../../../core/services/firestore-data.service';
+import { SupabaseDataService } from '../../core/services/supabase-data.service';
+import { FirestoreDataService } from '../../core/services/firestore-data.service';
 
 @Component({
   selector: 'app-dashboard',
