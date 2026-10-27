@@ -10,7 +10,8 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "ng lint",
-    "api": "json-server --watch db.json --port 3000"
+    "api": "json-server --watch db.json --port 3000",
+    "docs": "compodoc -p tsconfig.json -s -d documentation"
   },
   "private": true,
   "dependencies": {
@@ -21,6 +22,7 @@
     "@angular/platform-browser": "22.2.3",
     "@angular/platform-browser-dynamic": "22.2.3",
     "@angular/router": "22.2.3",
+    "@angular/service-worker": "^22.2.3",
     "@ionic/angular": "^9.0.0",
     "chart.js": "^4.6.1",
     "ionicons": "^8.1.0",
@@ -36,6 +38,7 @@
     "@angular/cli": "^22.2.4",
     "@angular/compiler-cli": "22.2.3",
     "@angular/language-service": "22.2.3",
+    "@compodoc/compodoc": "^2.0.0",
     "@ionic/angular-toolkit": "^13.0.0",
     "angular-eslint": "22.6.0",
     "eslint": "^10.10.0",
