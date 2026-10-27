@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Alta</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class=\"ion-padding\">
+  <form [formGroup]=\"form\">
+    <ion-item>
+      <ion-label position=\"stacked\">Email</ion-label>
+      <ion-input formControlName=\"email\"></ion-input>
+    </ion-item>
+    <ion-text color=\"danger\" *ngIf=\"form.get('email')?.errors?.['emailExists']\">Email existe</ion-text>
+    <ion-text color=\"medium\" *ngIf=\"form.get('email')?.pending\">Comprobando...</ion-text>
+  </form>
+</ion-content>

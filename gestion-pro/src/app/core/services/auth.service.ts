@@ -1,4 +1,4 @@
-﻿import { Injectable, signal, computed } from '@angular/core';
+import { Injectable, signal, computed } from '@angular/core';
 import { SupabaseService } from './supabase.service';
 import { User, Role } from '../models/user.model';
 import { Router } from '@angular/router';
@@ -22,11 +22,11 @@ export class AuthService {
     if (data.user) {
       const { data: profile } = await this.supabase.client
         .from('profiles')
-        .select('role, name')
+        .select('role, full_name, email')
         .eq('id', data.user.id)
         .single();
       const role = (profile?.role as Role) || 'user';
-      this._user.set({ id: data.user.id, email: data.user.email || '', role, name: profile?.name });
+      this._user.set({ id: data.user.id, email: data.user.email || profile?.email || '', role, name: profile?.full_name });
       this._role.set(role);
     }
   }

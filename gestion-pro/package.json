@@ -10,7 +10,6 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "ng lint",
-    "api": "json-server --watch db.json --port 3000",
     "docs": "compodoc -p tsconfig.json -s -d documentation"
   },
   "private": true,
@@ -27,7 +26,6 @@
     "@supabase/supabase-js": "^2.118.0",
     "chart.js": "^4.6.1",
     "ionicons": "^8.1.0",
-    "json-server": "^1.0.0-beta.15",
     "jspdf": "^4.2.1",
     "jspdf-autotable": "^5.0.9",
     "ng2-charts": "^11.0.0",
