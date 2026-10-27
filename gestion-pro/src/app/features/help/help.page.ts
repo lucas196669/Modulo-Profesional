@@ -1,0 +1,11 @@
+﻿import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { IonicModule } from '@ionic/angular';
+
+@Component({
+  selector: 'app-help',
+  standalone: true,
+  imports: [CommonModule, IonicModule],
+  templateUrl: './help.page.html',
+})
+export class HelpPage {}
