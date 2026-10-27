@@ -1,0 +1,55 @@
+﻿{
+  "users": [
+    {
+      "id": 1,
+      "email": "admin@demo.com",
+      "password": "Admin123!",
+      "role": "admin",
+      "name": "Administrador Demo"
+    },
+    {
+      "id": 2,
+      "email": "user@demo.com",
+      "password": "User123!",
+      "role": "user",
+      "name": "Usuario Demo"
+    }
+  ],
+  "records": [
+    {
+      "id": 1,
+      "title": "Venta Producto A",
+      "category": "ventas",
+      "amount": 1500.5,
+      "date": "2026-10-01"
+    },
+    {
+      "id": 2,
+      "title": "Compra Material",
+      "category": "compras",
+      "amount": 800.25,
+      "date": "2026-10-05"
+    },
+    {
+      "id": 3,
+      "title": "Venta Producto B",
+      "category": "ventas",
+      "amount": 2300.0,
+      "date": "2026-10-10"
+    },
+    {
+      "id": 4,
+      "title": "Gasto Transporte",
+      "category": "gastos",
+      "amount": 150.75,
+      "date": "2026-10-15"
+    },
+    {
+      "id": 5,
+      "title": "Venta Producto C",
+      "category": "ventas",
+      "amount": 1800.3,
+      "date": "2026-10-20"
+    }
+  ]
+}
